@@ -1,6 +1,7 @@
 from selenium.webdriver.support.ui import WebDriverWait as wait
 from selenium.webdriver.support import expected_conditions as EC
 
+
 class BasePage:
     def __init__ (self, browser, url):
         self.browser = browser
@@ -28,4 +29,4 @@ class BasePage:
         return wait(self.browser, timeout).until(EC.element_to_be_clickable(locator))
 
     def go_to_element(self, element):
-        self.browser.execute_script("argument[0].scrollIntoView();", element)
+        self.browser.execute_script("arguments[0].scrollIntoView();", element)
