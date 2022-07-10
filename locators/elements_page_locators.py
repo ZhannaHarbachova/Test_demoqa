@@ -48,3 +48,11 @@ class CheckBoxPageLocators:
     # ARROW_WORKSPACE = (By.XPATH, "//button/following-sibling::*[./*[@id='tree-node-workspace']]")
     # ARROW_OFFICE = (By.XPATH, "//button/following-sibling::*[./*[@id='tree-node-office']]")
 
+
+class RadioButtonPageLocators:
+    ITEM_LIST = (By.CSS_SELECTOR, ".custom-control-label")
+    OUTPUT_RESULT = (By.CSS_SELECTOR, ".text-success")
+
+    YES_RADIOBUTTON = (By.CSS_SELECTOR, "#yesRadio + label")
+    IMPRESSIVE_RADIOBUTTON = (By.CSS_SELECTOR, "#impressiveRadio + label")
+    NO_RADIOBUTTON = (By.CSS_SELECTOR, "#noRadio + label")
