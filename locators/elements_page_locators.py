@@ -94,3 +94,11 @@ class ButtonsPageLocators:
     DOUBLE_CLICK_MESSAGE = (By.ID, "doubleClickMessage")
     RIGHT_CLICK_MESSAGE = (By.ID, "rightClickMessage")
     CLICK_ME_MESSAGE = (By.ID, "dynamicClickMessage")
+
+
+class LinksPageLocators:
+
+    SIMPLE_LINK = (By.ID, "simpleLink")
+    BAD_REQUEST_LINK = (By.ID, "bad-request")
+
+    BAD_REQUEST_MESSAGE = (By.ID, "linkResponse")

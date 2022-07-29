@@ -1,7 +1,7 @@
 import random
 import time
 
-from pages.elements_page import TextBoxPage, CheckBoxPage, RadioButtonPage, WebTablePage, ButtonPage
+from pages.elements_page import TextBoxPage, CheckBoxPage, RadioButtonPage, WebTablePage, ButtonPage, LinksPage
 
 
 class TestElements:
@@ -102,13 +102,37 @@ class TestElements:
 
     class TestButtonPage:
 
-        def test_different_click_on_the_buttons(self, browser):
+        def test_different_click_on_the_double_button(self, browser):
             button_page = ButtonPage(browser, 'https://demoqa.com/buttons')
             button_page.open()
             double = button_page.click_button('double')
-            right = button_page.click_button('right')
-            click = button_page.click_button('click')
 
             assert double == "You have done a double click", "The double click button was not pressed"
+
+        def test_different_click_on_the_right_button(self, browser):
+            button_page = ButtonPage(browser, 'https://demoqa.com/buttons')
+            button_page.open()
+            right = button_page.click_button('right')
+
             assert right == "You have done a right click", "The right click button was not pressed"
+
+        def test_different_click_on_the_dynamic_button(self, browser):
+            button_page = ButtonPage(browser, 'https://demoqa.com/buttons')
+            button_page.open()
+            click = button_page.click_button('click')
+
             assert click == "You have done a dynamic click", "The dynamic click button was not pressed"
+
+    class TestLinkPage:
+
+        def test_check_link(self, browser):
+            links_page = LinksPage(browser, 'https://demoqa.com/links')
+            links_page.open()
+            href_link, current_url = links_page.check_new_tab_simple_link()
+            assert href_link == current_url, "The link is broken or url is incorrect"
+
+        def test_broken_link(self, browser):
+            links_page = LinksPage(browser, 'https://demoqa.com/links')
+            links_page.open()
+            responce_code = links_page.check_bad_request_link('https://demoqa.com/bad-request')
+            assert responce_code == 400, "The link works or the status code os not 400"
