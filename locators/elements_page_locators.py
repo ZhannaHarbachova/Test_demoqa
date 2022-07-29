@@ -82,3 +82,15 @@ class WebTablePageLocators:
     NO_DATA = (By.CSS_SELECTOR, ".rt-noData")
     COUNT_ROW_LIST = (By.CSS_SELECTOR, "[aria-label='rows per page']")
 
+
+class ButtonsPageLocators:
+
+    # buttons
+    DOUBLE_CLICK_BUTTON = (By.ID, "doubleClickBtn")
+    RIGHT_CLICK_BUTTON = (By.ID, "rightClickBtn")
+    CLICK_ME_BUTTON = (By.XPATH, "//*[@class='mt-4']/button[normalize-space(text()) = 'Click Me']")
+
+    # messages
+    DOUBLE_CLICK_MESSAGE = (By.ID, "doubleClickMessage")
+    RIGHT_CLICK_MESSAGE = (By.ID, "rightClickMessage")
+    CLICK_ME_MESSAGE = (By.ID, "dynamicClickMessage")
